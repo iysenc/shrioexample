@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登陆成功页面</title>
+</head>
+<body>
+<h1 align="center" style="color:greenyellow">login success!</h1>
+用户名：<p th:text="${session.user.username}"></p>
+密码：<p th:text="${session.user.password}"></p>
+</body>
+</html>

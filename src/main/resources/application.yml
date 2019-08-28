@@ -1,0 +1,42 @@
+#服务端口，这里是10086端口
+server:
+  port: 10086
+#Mybatis配置
+mybatis:
+#说明实体类的位置
+  type-aliases-package: com.example.demo.entity
+#全局配置
+  configuration:
+#主键自动增长机制
+    use-generated-keys: true
+#thymeleaf模板引擎配置
+spring:
+  thymeleaf:
+    mode: HTML
+    prefix: classpath:/templates/
+    suffix: .html
+    enabled: true
+    encoding: UTF-8
+    servlet:
+      content-type: text/html
+    #开发时关闭缓存,不然没法看到实时页面
+    cache: false
+  #数据源的配置
+  datasource:
+    username: root
+    password: zwt520
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/user?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+    dbcp2:
+  #连接池最大空闲数
+      max-idle: 10
+  #连接池最小空闲数
+      min-idle: 5
+      max-wait-millis: 10000
+  #表明静态文件路径
+  resources:
+    static-locations: classpath:/static/
+  #可有可无
+  jpa:
+    database: mysql
+    show-sql: true
